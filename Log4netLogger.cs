@@ -1,10 +1,7 @@
 ﻿using log4net;
 using log4net.Repository;
-using log4net.Repository.Hierarchy;
 using System;
 using System.IO;
-using System.Net.NetworkInformation;
-using System.Reflection;
 
 /// <summary>
 /// namespace Log4netLogger
@@ -36,7 +33,7 @@ namespace Log4netLogger
                 TypeofLogger = t;
                 return log4net.LogManager.GetLogger(t);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
@@ -52,7 +49,7 @@ namespace Log4netLogger
                 FileInfo fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "\\" + "log4net.config"));
                 log4net.Config.XmlConfigurator.ConfigureAndWatch(repository, fileInfo);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
