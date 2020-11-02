@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net48</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;netcoreapp3.1;net48</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.11" />
+    <PackageReference Include="log4net" Version="2.0.12" />
     <PackageReference Include="log4net-loggly" Version="9.0.0" />
   </ItemGroup>
 
