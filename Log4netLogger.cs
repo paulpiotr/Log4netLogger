@@ -1,7 +1,7 @@
-﻿using log4net;
-using log4net.Repository;
 using System;
 using System.IO;
+using log4net;
+using log4net.Repository;
 
 /// <summary>
 /// namespace Log4netLogger
@@ -26,33 +26,19 @@ namespace Log4netLogger
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
-        public static ILog GetLog4netInstance(System.Type t)
+        public static ILog GetLog4netInstance(Type t)
         {
-            try
-            {
-                TypeofLogger = t;
-                return log4net.LogManager.GetLogger(t);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            TypeofLogger = t;
+            return LogManager.GetLogger(t);
         }
         /// <summary>
         /// static Log4netLogger()
         /// </summary>
         static Log4netLogger()
         {
-            try
-            {
-                ILoggerRepository repository = Log4netInstance.Logger.Repository;
-                FileInfo fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "\\" + "log4net.config"));
-                log4net.Config.XmlConfigurator.ConfigureAndWatch(repository, fileInfo);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            ILoggerRepository repository = Log4netInstance.Logger.Repository;
+            var fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "\\" + "log4net.config"));
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(repository, fileInfo);
         }
     }
 }
