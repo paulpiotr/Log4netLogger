@@ -35,8 +35,9 @@ namespace Log4netLogger
             }
             catch (Exception e)
             {
-                throw e;
+                Console.WriteLine(string.Format("\n{0}\n{1}\n{2}\n{3}\n", e.GetType(), e.InnerException?.GetType(), e.Message, e.StackTrace), e);
             }
+            return null;
         }
         /// <summary>
         /// static Log4netLogger()
@@ -46,12 +47,13 @@ namespace Log4netLogger
             try
             {
                 ILoggerRepository repository = Log4netInstance.Logger.Repository;
+                //ILoggerRepository repository = LogManager.GetLogger(TypeofLogger ?? System.Reflection.MethodBase.GetCurrentMethod().DeclaringType).Logger.Repository;
                 FileInfo fileInfo = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "\\" + "log4net.config"));
                 log4net.Config.XmlConfigurator.ConfigureAndWatch(repository, fileInfo);
             }
             catch (Exception e)
             {
-                throw e;
+                Console.WriteLine(string.Format("\n{0}\n{1}\n{2}\n{3}\n", e.GetType(), e.InnerException?.GetType(), e.Message, e.StackTrace), e);
             }
         }
     }
