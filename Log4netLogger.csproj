@@ -8,9 +8,15 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net5.0;netstandard2.1</TargetFrameworks>
-    <LangVersion>8.0</LangVersion>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Version>5.0.2</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include=".env\log4net.debug.config" />
+    <None Include=".env\log4net.release.config" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.12" />
     <PackageReference Include="log4net-loggly" Version="9.0.0" />
