@@ -18,9 +18,9 @@ namespace Log4netLogger
         /// </summary>
         public static System.Type TypeofLogger { get; set; }
         /// <summary>
-        /// public static ILog Log4netInstance { get; } = LogManager.GetLogger(TypeofLogger ?? System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        /// public static ILog Log4netInstance { get; } = LogManager.GetLogger(TypeofLogger ?? System.Reflection.MethodBase.GetCurrentMethod()?.DeclaringType);
         /// </summary>
-        public static ILog Log4netInstance { get; } = LogManager.GetLogger(TypeofLogger ?? System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public static ILog Log4netInstance { get; } = LogManager.GetLogger(TypeofLogger ?? System.Reflection.MethodBase.GetCurrentMethod()?.DeclaringType);
         /// <summary>
         /// public static ILog GetLog4netInstance(System.Type t)
         /// </summary>
