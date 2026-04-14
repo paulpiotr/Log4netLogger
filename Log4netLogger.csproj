@@ -19,7 +19,7 @@
     <None Include=".env\log4net.release.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="log4net" Version="3.3.0" />
     <PackageReference Include="log4net-loggly" Version="9.0.0" />
   </ItemGroup>
 </Project>
